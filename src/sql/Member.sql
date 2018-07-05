@@ -1,6 +1,16 @@
 select * from tab;
 
 drop table member;
+DESC member;
+
+ALTER TABLE MEMBER
+drop userid VARCHAR2(20);
+
+ALTER TABLE MEMBER
+ADD CONSTRAINT address_fk_addr_seq
+FOREIGN KEY(addr_seq) REFERENCES address(addr_seq);
+
+--userid VARCHAR2(20) CONSTRAINT member_pk PRIMARY KEY,
 
 CREATE TABLE member(
 	userid VARCHAR2(20) PRIMARY KEY,
